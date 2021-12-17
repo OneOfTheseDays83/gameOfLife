@@ -1,4 +1,5 @@
 # Game of life
+This implements the game of life as a backend service in GO. The requests to play the game can be send via REST API. The output/response is currently limited to console logging.
 
 ---
 ## Architecture
