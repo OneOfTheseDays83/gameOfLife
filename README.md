@@ -3,17 +3,22 @@ This implements the game of life as a backend service in GO. The requests to pla
 
 ---
 ## Architecture
-The application is set up as a microservice with a REST API to play the game.
+The application is set up as a microservice with a REST API to play the game. You can build it with your toolchain or use the docker variant.
 
 ## Build
+### local
 If you didn't change anything you don't need to build the application and can rather jump to "Start the service".
 
-### Get dependencies
 Download the dependencies first. This will download all the needed go modules needed to build the service.
 ```shell
 make download-deps 
 ```
-### Build
+Now build the service.
+```shell
+make build-local
+```
+
+### Docker
 ```shell
 make build
 ```
@@ -21,8 +26,13 @@ make build
 ## Play Game of Life
 
 ### Start the service
+If you build the service with your toolchain:
 ```shell
-make start 
+make start-local
+```
+If you used the docker variant:
+```shell
+make start
 ```
 
 ### Requests to play the game
@@ -69,5 +79,3 @@ curl -v -X POST http://localhost:8000/v1/gol --data-raw '
 * Unit testing must be extended
 * Improve grid json input to not be limited to `true` `false`  
 * Return results of game via REST API (either one result for all generations or websocket)
-* Build in docker
-* Port of service should be an environment variable

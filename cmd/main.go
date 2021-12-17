@@ -30,8 +30,11 @@ func main() {
 	res := make(chan error, 1)
 	defer close(res)
 
+	port := os.Getenv("SERVICE_PORT")
+	log.Printf("Listening in port %s", port)
+
 	s := http.Server{
-		Addr:    ":8000",
+		Addr:    ":" + port,
 		Handler: createRootHandler(),
 	}
 	go func() {
