@@ -1,5 +1,5 @@
 # Game of life
-This implements the game of life as a backend service in GO. The requests to play the game can be send via REST API. The output/response is currently limited to console logging.
+This implements the Conway's game of life as a backend service in GO. The requests to play the game can be send via REST API. The output/response is currently limited to console logging. Currently there is no life/dead beyond the edges - this could be easily adapted.
 
 ---
 ## Architecture
